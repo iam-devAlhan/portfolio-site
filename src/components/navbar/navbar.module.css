@@ -1,0 +1,22 @@
+:root {
+    --color-blue: rgb(0, 90, 226);
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    align-items: center;
+    justify-content: right;
+}
+
+.nav-link {
+    display: inline;
+    font-weight: 500;
+    padding: 10px;
+    transition: 0.2s ease-out;
+}
+
+.nav-link:hover {
+    color: var(--color-blue);
+    cursor: pointer;
+}

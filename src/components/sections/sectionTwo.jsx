@@ -9,8 +9,9 @@ import githubLogo from "../../assets/1298743_github_git_logo_social_icon.svg";
 
 const SectionTwo = function() {
 
-    const imgHeight = 70;
-    const imgWidth = 70;
+    const imgHeight = 90;
+    const imgWidth = 90;
+
 
     return (
         <>
