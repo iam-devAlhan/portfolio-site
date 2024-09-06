@@ -17,7 +17,7 @@ const SectionThree = function () {
                 
                 <div className={styles.container2}>
                     <div id={styles.projectContainer}>
-                        <h3>Online Examination Portal App</h3>
+                        <h3>Quizlify</h3>
                         <p>Online examination portal for teachers, students and admin. Built using react and firebase</p>
                         <button className={styles.button}>Live Demo</button>
                         <button className={styles.button}>Source Code</button>

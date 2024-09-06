@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    height: 30vh;
+    width: 100%;
+}
+.heading {
+    font-size: 5vh;
+    margin-bottom: 10px;
+}
+
+#userinput {
+    padding: 10px;
+    margin: 10px 0px;
+}

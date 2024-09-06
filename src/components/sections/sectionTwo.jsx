@@ -16,7 +16,7 @@ const SectionTwo = function() {
     return (
         <>
         <section className={styles.sectionTwo}>
-            <h1 className={styles.heading_01}>Skills i have :-</h1>
+            <h1 className={styles.heading_01}>Skills</h1>
             <div className={styles.skills_section}>
                 <div id={styles.skill}><img src={htmlImage} width={imgWidth} height={imgHeight} title="HTML" /></div>
                 <div id={styles.skill}><img src={cssImage} width={imgWidth} height={imgHeight} title="CSS"/></div>
