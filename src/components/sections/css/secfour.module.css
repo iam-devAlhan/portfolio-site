@@ -18,7 +18,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
     padding: 5%;
-    background-color: var(--color-bg);
+    background-color: var(--color-dark);
     border-radius: 20px;
     height: fit-content;
 }
@@ -30,6 +30,7 @@
     height: 15vh;
     border-radius: 20px;
     margin: 10px;
+    background-color: var(--color-bg);
 }
 #item:hover {
     border: 2px solid var(--color-blue);
