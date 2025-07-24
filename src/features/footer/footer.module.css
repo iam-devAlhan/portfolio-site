@@ -1,0 +1,38 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    padding: 5%;
+    background-color: var(--color-dark);
+}
+.footer-container {
+    display: flex;
+    gap: 10px;
+}
+.heading {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#submitButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+    border: none;
+    font-size: 30px;
+    background-color: transparent;
+    color: var(--color-white);
+    transition: 0.2s ease-out;
+}
+a #submitButton {
+    text-decoration: none;
+}
+#submitButton:hover {
+    opacity: calc(0.5);
+    transform: translateY(30%);
+    cursor: pointer;
+}

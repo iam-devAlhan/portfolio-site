@@ -1,4 +1,3 @@
-
 .sectionOne {
     width: 100%;
     height: 100vh;
@@ -7,7 +6,7 @@
     flex-direction: row;
     align-items: left;
     justify-content: center;
-    line-height: 6vh;
+    line-height: 2rem;
 }
 .flexContainer {
     width: 60%;
@@ -24,35 +23,34 @@
     justify-content: center;
 }
 .button {
+    display: flex;
     width: fit-content;
-    padding: 10px;
+    padding: 2%;
     border: none;
     background-color: var(--color-blue);
     color: var(--color-white);
     border-radius: 10px;
     margin-top: 5px;
-    font-size: 2vh;
+    font-size: 20px;
     font-weight: 500;
     transition: 0.2s ease-out;
+    justify-content: center;
+    align-items: center;
 }
 .button:hover {
-    background-color: var(--color-white);
-    color: var(--color-blue);
+    opacity: calc(0.7);
     cursor: pointer;
 }
 .heading_01 {
     color: var(--color-blue);
-    font-size: 6.5vh;
+    font-size: 3rem;
 }
 .heading_02 {
-    font-size: 3.5vh;
+    font-size: 2rem;
 }
 
 .profileId {
     border-radius: 200px;
-    border: 5px solid var(--color-blue);
+    box-shadow: 0px 0px 20px var(--color-blue);
 }
 
-.profileId::before {
-    content: " ";
-}
