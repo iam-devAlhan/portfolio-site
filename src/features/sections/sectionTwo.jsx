@@ -1,16 +1,16 @@
 import styles from "../sections/css/sectionTwo.module.css";
-import htmlImage from "../../assets/317755_badge_html_html5_achievement_award_icon.svg";
-import cssImage from "../../assets/4202020_css3_html_logo_social_social media_icon.svg";
+import djangoImage from "../../assets/django-icon-svgrepo-com.svg";
+import fastapiLogo from "../../assets/fastapi-svgrepo-com.svg";
 import jsLogo from "../../assets/4373213_js_logo_logos_icon.svg";
-import reactLogo from "../../assets/react.svg";
-import firebaseLogo from "../../assets/icons8-firebase.svg";
-import gitLogo from "../../assets/2993773_git_social media_icon.svg";
-import mySqllogo from "../../assets/icons8-mysql-logo.svg";
+import reactLogo from "../../assets/reactjs-svgrepo-com.svg";
+import mongodbLogo from "../../assets/mongodb-svgrepo-com.svg";
+import postgresSqllogo from "../../assets/postgresql-logo-svgrepo-com.svg";
 import tsLogo from "../../assets/icons8-typescript.svg";
 import pythonLogo from "../../assets/icons8-python.svg";
+
 const SectionTwo = function () {
-  const imgHeight = "50px";
-  const imgWidth = "50px";
+  const imgHeight = "48px";
+  const imgWidth = "48px";
 
   return (
     <>
@@ -27,14 +27,8 @@ const SectionTwo = function () {
             data-aos="fade-up"
             data-aos-duration="1000"
           >
-            <h1 className={styles.heading_01}>About Me + Tech Stack</h1>
-            Hey, I’m Alhaan Ahmed — a self-taught Full Stack Developer with a
-            deep passion for building meaningful products, solving real-world
-            problems, and pushing the limits of what’s possible with code. I
-            work primarily with React, Firebase, FastAPI, and MySQL, and
-            recently I've been diving into AI/LLM integrations using tools like
-            Groq API. I'm also mentoring others in Python and FastAPI, sharing
-            what I learn as I grow.
+            <h1 className={styles.heading_01}>About Myself</h1>
+            <p>I am a Python Engineer with expertise in Python and other languages such as Javascript, Typescript and SQL. I have a mindset of system design and my skillset revolves around these frameworks + libraries and programming languages:</p>
           </div>
           <div
             className={styles.skills_section}
@@ -43,18 +37,18 @@ const SectionTwo = function () {
           >
             <div id={styles.skill}>
               <img
-                src={htmlImage}
+                src={djangoImage}
                 width={imgWidth}
                 height={imgHeight}
-                title="HTML"
+                title="Django"
               />
             </div>
             <div id={styles.skill}>
               <img
-                src={cssImage}
+                src={fastapiLogo}
                 width={imgWidth}
                 height={imgHeight}
-                title="CSS"
+                title="FastAPI"
               />
             </div>
             <div id={styles.skill}>
@@ -75,18 +69,18 @@ const SectionTwo = function () {
             </div>
             <div id={styles.skill}>
               <img
-                src={firebaseLogo}
+                src={mongodbLogo}
                 width={imgWidth}
                 height={imgHeight}
-                title="Google Firebase"
+                title="MongoDB"
               />
             </div>
             <div id={styles.skill}>
               <img
-                src={gitLogo}
+                src={postgresSqllogo}
                 width={imgWidth}
                 height={imgHeight}
-                title="Git"
+                title="PostgresSQL"
               />
             </div>
             <div id={styles.skill}>
@@ -94,15 +88,7 @@ const SectionTwo = function () {
                 src={tsLogo}
                 width={imgWidth}
                 height={imgHeight}
-                title="Github"
-              />
-            </div>
-            <div id={styles.skill}>
-              <img
-                src={mySqllogo}
-                width={imgWidth}
-                height={imgHeight}
-                title="MySQL"
+                title="Typescript"
               />
             </div>
             <div id={styles.skill}>

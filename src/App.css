@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
-/* Variables declared in the main css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 :root {
     --color-bg: #121212;
+    --color-darker-cyan: rgb(0, 61, 61);
     --color-blue: #00aaff;
     --color-white: #fff;
+    --color-white-variant: #e7e7e7;
     --color-dark: #0c0c0c;
 }
 
@@ -16,6 +17,6 @@ body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: "Manjari", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 }
 

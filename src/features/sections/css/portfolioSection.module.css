@@ -2,6 +2,21 @@
 .container {
     display: flex;
     flex-direction: column;
+     /* Base background color */
+    background-color: var(--color-dark);
+    /* deep slate / midnight blue */
+
+    /* Polka dots */
+    background-image:
+        radial-gradient(circle,
+            rgba(255, 255, 255, 0.12) 1.2px,
+            transparent 1.2px);
+
+    /* Spacing between dots */
+    background-size: 24px 24px;
+
+    /* Optional: slight offset for organic feel */
+    background-position: 0 0;
     height: fit-content;
     width: 100%;
     padding: 5%;
@@ -11,8 +26,9 @@
 }
 
 .mainHeading {
-    font-size: 3rem;
-    color: var(--color-blue);
+    font-size: 5rem;
+    font-weight: 400;
+    color: var(--color-white);
     margin: 2% 0%;
 }
 
@@ -21,41 +37,10 @@
     width: 100%;
     height: max-content;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2%;
     border-radius: 50px;
     margin-bottom: 30px;
-}
-
-#projectContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
-    width: 50%;
-}
-
-.button {
-    width: fit-content;
-    padding: 2%;
-    border: none;
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    border-radius: 10px;
-    margin-top: 10px;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: 0.2s ease-out;
-}
-.button:hover {
-    opacity: calc(0.7);
-    cursor: pointer;
-}
-#projectContainer h2 {
-    font-size: 2rem;
-}
-
-#projectContainer p {
-    font-size: 20px;
 }
 
 .image {
@@ -69,4 +54,54 @@
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px var(--color-blue);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content */
+.card-content {
+  padding: 1rem 1.25rem 1.5rem;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #cbd5f5;
 }

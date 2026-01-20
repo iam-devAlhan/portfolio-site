@@ -4,17 +4,21 @@
     flex-direction: row;
     padding: 2%;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
 }
 
 .nav-link {
     display: inline;
     font-weight: 500;
+    font-size: 20px;
     padding: 10px;
+    margin: 0px 10px;
     transition: 0.2s ease-out;
 }
 
 .nav-link:hover {
-    color: var(--color-blue);
+    background-color: var(--color-white);
+    color: var(--color-dark);
     cursor: pointer;
+    border-radius: 20px;
 }

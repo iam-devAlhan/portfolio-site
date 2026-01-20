@@ -1,10 +1,12 @@
 import styles from "../sections/css/sectionOne.module.css";
-import profilePhoto from "../../assets/alhaan.jpeg";
+import profilePhoto from "../../assets/alhaan.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { Link } from "react-scroll";
+
+
 const SectionOne = function () {
+  
   useEffect(() => {
     Aos.init();
   }, []);
@@ -19,17 +21,12 @@ const SectionOne = function () {
         >
           <h1 className={styles.heading_01}>Hi! I am Alhaan Ahmed</h1>
           <h3 className={styles.heading_02}>
-            Full Stack Python Developer <i className="bi bi-code"></i>
+            Python Software Engineer
           </h3>
-          <Link to="portfolio" smooth={true} duration={500}>
-            <button className={styles.button}>Show my Work</button>
-          </Link>
         </div>
         <div className={styles.flexContainer2}>
           <img
             src={profilePhoto}
-            width="400"
-            height="400"
             className={styles.profileId}
           />
         </div>
