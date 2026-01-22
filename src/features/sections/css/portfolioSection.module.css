@@ -60,7 +60,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: fit-content;
   margin: 0 auto;
 }
 
@@ -71,7 +71,6 @@
   overflow: hidden;
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -95,13 +94,45 @@
 
 .card h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .card p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: #cbd5f5;
+}
+.card .card-button-black {
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  background-color: var(--color-bg);
+  transition: 200ms all ease-in-out;
+}
+
+.card .card-button-white {
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  transition: 200ms all ease-in-out;
+}
+
+.card-button-container {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  gap: 10px;
+}
+.card .card-button-black:hover {
+  background-color: var(--color-dark);
+}
+
+.card .card-button-white:hover {
+  background-color: var(--color-white-variant);
 }
