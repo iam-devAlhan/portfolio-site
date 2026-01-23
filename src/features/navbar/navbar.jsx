@@ -5,7 +5,7 @@ const Navbar = function () {
     <>
       <header>
         <nav>
-          <div className={styles.container}>
+          <div className={`${styles.container} ${styles["navbar-header"]}`}>
             <ul>
               <Link to="about" smooth={true} duration={500}>
                 <li className={styles["nav-link"]}>About</li>

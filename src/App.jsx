@@ -3,6 +3,7 @@ import SectionOne from "./features/sections/sectionOne";
 import SectionTwo from "./features/sections/sectionTwo";
 import SectionThree from "./features/sections/portfolioSection";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./features/footer/footer";
 function App() {
   return (

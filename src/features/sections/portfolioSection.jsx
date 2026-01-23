@@ -1,6 +1,5 @@
 import styles from "../sections/css/portfolioSection.module.css";
 import projectone from "../../assets/freelancing_app_project.jpeg";
-import projecttwo from "../../assets/ai_assistant_project.png";
 
 const SectionThree = function () {
   return (
