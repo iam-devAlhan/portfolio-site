@@ -1,6 +1,6 @@
 import styles from "../sections/css/sectionTwo.module.css";
 import djangoImage from "../../assets/django-icon-svgrepo-com.svg";
-import fastapiLogo from "../../assets/fastapi-svgrepo-com.svg";
+import fastapiLogo from "../../assets/png-transparent-fastapi-hd-logo-thumbnail.png";
 import jsLogo from "../../assets/4373213_js_logo_logos_icon.svg";
 import reactLogo from "../../assets/reactjs-svgrepo-com.svg";
 import mongodbLogo from "../../assets/mongodb-svgrepo-com.svg";
