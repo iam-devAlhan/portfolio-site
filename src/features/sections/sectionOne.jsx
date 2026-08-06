@@ -1,5 +1,5 @@
 import styles from "../sections/css/sectionOne.module.css";
-import profilePhoto from "../../assets/alhaan.png";
+import profilePhoto from "../../assets/alhaan.jpeg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -21,14 +21,11 @@ const SectionOne = function () {
         >
           <h1 className={styles.heading_01}>Hi! I am Alhaan Ahmed</h1>
           <h3 className={styles.heading_02}>
-            Software Engineer
+            AI Software Engineer
           </h3>
         </div>
         <div className={styles.flexContainer2}>
-          <img
-            src={profilePhoto}
-            className={styles.profileId}
-          />
+          <img className={styles.profileId} src={profilePhoto}/>
         </div>
       </section>
     </>

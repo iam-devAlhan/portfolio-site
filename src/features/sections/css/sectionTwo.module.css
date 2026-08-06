@@ -1,18 +1,26 @@
+/* ============================================= */
+/* SECTION TWO - MAIN CONTAINER */
+/* ============================================= */
 .sectionTwo {
-    background-color: var(--color-white);
+    background-color: var(--color-dark);
     height: fit-content;
-    /* Polka dots */
+    /* Polka dots pattern */
     background-image:
         radial-gradient(circle,
-            rgb(218, 218, 218) 1.2px,
+            rgba(255, 255, 255, 0.12) 1.2px,
             transparent 1.2px);
     background-size: 24px 24px;
     width: 100%;
-    padding: 5%;
+    padding: 5% 5%;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
 }
 
+/* ============================================= */
+/* CONTAINER - FLEX LAYOUT */
+/* ============================================= */
 .container {
     height: fit-content;
     align-items: center;
@@ -20,43 +28,288 @@
     padding: 2%;
     display: flex;
     flex-direction: row;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.container .heading_01 {
-    font-size: 6rem;
-    font-weight: 400;
-    margin-bottom: 2%;
-    color: var(--color-bg);
+/* ============================================= */
+/* HEADING & TEXT */
+/* ============================================= */
+.heading_01 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
+/* Paragraph styling - targets the p inside the flex column */
 .container p {
-    color: var(--color-bg);
+    color: var(--color-white);
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    line-height: 1.8;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-bottom: 1rem;
 }
 
+/* ============================================= */
+/* SKILLS GRID - 4x2 Layout */
+/* ============================================= */
 .skills_section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 40%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    max-width: 480px;
     align-items: center;
     justify-items: center;
-    border-radius: 10px;
-    padding: 2%;
-    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    background-color: var(--color-bg);
+    gap: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
+/* ============================================= */
+/* INDIVIDUAL SKILL CIRCLES */
+/* ============================================= */
 #skill {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    margin: 5px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 0;
     background-color: var(--color-white-variant);
-    transition: 0.5s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+    position: relative;
 }
 
+/* Hover effect for desktop */
 #skill:hover {
-    transform: translateY(-10%);
+    transform: translateY(-10%) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-primary);
+}
+
+
+
+/* ============================================= */
+/* RESPONSIVE BREAKPOINTS */
+/* ============================================= */
+
+/* TABLETS & SMALL LAPTOPS (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        gap: 2rem;
+        padding: 2%;
+    }
+    
+    .skills_section {
+        max-width: 420px;
+        padding: 1.2rem;
+        gap: 10px;
+    }
+    
+    #skill {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #skill img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+/* TABLETS (600px - 767px) */
+@media (max-width: 767px) {
+    .sectionTwo {
+        padding: 8% 4%;
+        min-height: auto;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding: 3%;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    /* Text container takes full width */
+    .container > div:first-child {
+        width: 100% !important;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .heading_01 {
+        font-size: clamp(2.2rem, 6vh, 3.2rem);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .container p {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        text-align: center;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .skills_section {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 380px;
+        padding: 1rem;
+        gap: 8px;
+    }
+    
+    #skill {
+        width: 70px;
+        height: 70px;
+    }
+    
+    #skill img {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+/* MOBILE LARGE (425px - 599px) */
+@media (max-width: 599px) {
+    .sectionTwo {
+        padding: 10% 3%;
+    }
+    
+    .container {
+        gap: 1.5rem;
+        padding: 2%;
+    }
+    
+    .heading_01 {
+        font-size: clamp(1.8rem, 5vh, 2.5rem);
+    }
+    
+    .container p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        padding: 0 0.5rem;
+    }
+    
+    .skills_section {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 340px;
+        padding: 0.8rem;
+        gap: 6px;
+    }
+    
+    #skill {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+    }
+    
+    #skill img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
+/* MOBILE MEDIUM (375px - 424px) */
+@media (max-width: 424px) {
+    .skills_section {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 290px;
+        padding: 0.6rem;
+        gap: 5px;
+        border-radius: 12px;
+    }
+    
+    #skill {
+        width: 55px;
+        height: 55px;
+    }
+    
+    #skill img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    .heading_01 {
+        font-size: 1.6rem;
+    }
+    
+    .container p {
+        font-size: 0.85rem;
+    }
+}
+
+/* MOBILE SMALL (320px - 374px) */
+@media (max-width: 374px) {
+    .skills_section {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 240px;
+        padding: 0.5rem;
+        gap: 4px;
+        border-radius: 10px;
+    }
+    
+    #skill {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+    }
+    
+    #skill img {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    
+    .heading_01 {
+        font-size: 1.4rem;
+    }
+    
+    .container p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+}
+
+/* ============================================= */
+/* TOUCH DEVICES - Disable hover on mobile */
+/* ============================================= */
+@media (hover: none) and (pointer: coarse) {
+    #skill:hover {
+        transform: none;
+        box-shadow: none;
+        background-color: var(--color-white-variant);
+    }
+    
+    #skill:active {
+        transform: scale(0.95);
+        background-color: var(--color-primary);
+    }
+}
+
+/* ============================================= */
+/* ACCESSIBILITY - Reduced Motion */
+/* ============================================= */
+@media (prefers-reduced-motion: reduce) {
+    #skill {
+        transition: none;
+    }
+    
+    #skill:hover {
+        transform: none;
+    }
 }

@@ -1,138 +1,625 @@
-
+/* ============================================= */
+/* PORTFOLIO SECTION - MAIN CONTAINER */
+/* ============================================= */
 .container {
     display: flex;
     flex-direction: column;
-     /* Base background color */
     background-color: var(--color-dark);
-    /* deep slate / midnight blue */
-
-    /* Polka dots */
+    /* Polka dots pattern */
     background-image:
         radial-gradient(circle,
-            rgba(255, 255, 255, 0.12) 1.2px,
+            rgba(255, 255, 255, 0.08) 1.2px,
             transparent 1.2px);
-
-    /* Spacing between dots */
     background-size: 24px 24px;
-
-    /* Optional: slight offset for organic feel */
     background-position: 0 0;
     height: fit-content;
     width: 100%;
-    padding: 5%;
+    padding: 5% 5% 8%;
     align-items: center;
     justify-content: flex-start;
-    background-color: var(--color-dark);
+    position: relative;
 }
 
+/* Subtle gradient overlay for depth */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, 
+                rgba(255, 255, 255, 0.03) 0%, 
+                transparent 70%);
+    pointer-events: none;
+}
+
+/* ============================================= */
+/* MAIN HEADING */
+/* ============================================= */
 .mainHeading {
-    font-size: 5rem;
-    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
     color: var(--color-white);
-    margin: 2% 0%;
+    margin: 1% 0 3%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
 }
 
+/* Underline effect for heading */
+.mainHeading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, 
+                var(--color-white), 
+                transparent);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* ============================================= */
+/* CONTAINER 2 - WRAPPER */
+/* ============================================= */
 .container2 {
     display: flex;
     width: 100%;
+    max-width: 1400px;
     height: max-content;
     align-items: center;
     justify-content: center;
-    padding: 2%;
-    border-radius: 50px;
-    margin-bottom: 30px;
+    padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
-.image {
+/* ============================================= */
+/* CARD GRID */
+/* ============================================= */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ============================================= */
+/* INDIVIDUAL CARD */
+/* ============================================= */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 420px;
+    position: relative;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================= */
+/* CARD IMAGE */
+/* ============================================= */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    background-color: var(--color-bg);
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+/* Fallback for missing images */
+.card img:not([src]), 
+.card img[src=""],
+.card img[src="undefined"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-white);
-    color: var(--color-bg);
-    width: 26rem;
-    height: 15rem;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px var(--color-blue);
+    background: linear-gradient(135deg, 
+                var(--color-bg) 0%, 
+                var(--color-dark) 100%);
+    color: var(--color-white);
+    font-size: 1rem;
+    min-height: 200px;
+    position: relative;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  max-width: fit-content;
-  margin: 0 auto;
+.card img:not([src])::after,
+.card img[src=""]::after {
+    content: '🖼️ No Image';
+    position: absolute;
+    color: var(--color-white);
+    opacity: 0.5;
 }
 
-/* Card */
-.card {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  overflow: hidden;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* Image */
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Content */
+/* ============================================= */
+/* CARD CONTENT */
+/* ============================================= */
 .card-content {
-  padding: 1rem 1.25rem 1.5rem;
+    padding: 1.5rem 1.5rem 1.8rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    min-height: 3rem;
 }
 
 .card p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #cbd5f5;
-}
-.card .card-button-black {
-  padding: 15px 15px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  color: var(--color-white);
-  background-color: var(--color-bg);
-  transition: 200ms all ease-in-out;
+    margin: 0 0 1rem;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    line-height: 1.6;
+    color: rgba(203, 213, 245, 0.9);
+    flex: 1;
+    display: -webkit-box;
+    
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.card .card-button-white {
-  padding: 15px 15px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  background-color: var(--color-white);
-  transition: 200ms all ease-in-out;
-}
-
+/* ============================================= */
+/* CARD BUTTONS */
+/* ============================================= */
 .card-button-container {
-  display: flex;
-  margin-top: 10px;
-  flex-direction: column;
-  gap: 10px;
-}
-.card .card-button-black:hover {
-  background-color: var(--color-dark);
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
 }
 
-.card .card-button-white:hover {
-  background-color: var(--color-white-variant);
+.card .card-button-black {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: var(--color-white);
+    text-decoration: none;
+    background: var(--color-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.card .card-button-black i,
+.card .card-button-black svg {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.card .card-button-black:hover {
+    background: var(--color-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card .card-button-black:hover i,
+.card .card-button-black:hover svg {
+    transform: scale(1.1);
+}
+
+.card .card-button-black:active {
+    transform: scale(0.98);
+}
+
+/* Secondary button variant (if needed) */
+.card .card-button-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    color: var(--color-white);
+    text-decoration: none;
+    background: transparent;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.card .card-button-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ============================================= */
+/* RESPONSIVE BREAKPOINTS */
+/* ============================================= */
+
+/* LAPTOPS (1024px - 1366px) */
+@media (max-width: 1366px) {
+    .container {
+        padding: 4% 4% 6%;
+    }
+    
+    .card-grid {
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .card img {
+        height: 180px;
+    }
+}
+
+/* TABLETS & SMALL LAPTOPS (768px - 1023px) */
+@media (max-width: 1023px) {
+    .mainHeading {
+        font-size: clamp(2.5rem, 5vw, 3.2rem);
+    }
+    
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .card {
+        min-height: 380px;
+    }
+    
+    .card img {
+        height: 170px;
+    }
+    
+    .card h3 {
+        font-size: 1.2rem;
+        min-height: 2.5rem;
+    }
+    
+    .card p {
+        font-size: 0.9rem;
+        
+    }
+}
+
+/* MOBILE LARGE (600px - 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 6% 4% 8%;
+    }
+    
+    .mainHeading {
+        font-size: clamp(2rem, 4.5vw, 2.8rem);
+        margin: 0 0 5%;
+    }
+    
+    .mainHeading::after {
+        width: 40px;
+        height: 3px;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 1.5rem;
+    }
+    
+    .card {
+        min-height: auto;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .card img {
+        height: 180px;
+    }
+    
+    .card-content {
+        padding: 1.2rem 1.2rem 1.5rem;
+    }
+    
+    .card h3 {
+        font-size: 1.2rem;
+        min-height: auto;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card p {
+        font-size: 0.9rem;
+        
+    }
+    
+    .card-button-container {
+        flex-direction: row;
+        gap: 0.6rem;
+    }
+    
+    .card .card-button-black,
+    .card .card-button-outline {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+        min-width: 100px;
+        flex: 1;
+    }
+}
+
+/* MOBILE MEDIUM (425px - 599px) */
+@media (max-width: 599px) {
+    .container {
+        padding: 8% 3% 10%;
+    }
+    
+    .mainHeading {
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        margin: 0 0 6%;
+    }
+    
+    .card-grid {
+        gap: 1.2rem;
+    }
+    
+    .card img {
+        height: 160px;
+    }
+    
+    .card-content {
+        padding: 1rem 1rem 1.2rem;
+    }
+    
+    .card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card p {
+        font-size: 0.85rem;
+        
+    }
+    
+    .card-button-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .card .card-button-black,
+    .card .card-button-outline {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        min-width: 100%;
+        flex: none;
+    }
+}
+
+/* MOBILE SMALL (320px - 424px) */
+@media (max-width: 424px) {
+    .container {
+        padding: 10% 3% 12%;
+    }
+    
+    .mainHeading {
+        font-size: clamp(1.6rem, 3.5vw, 2rem);
+        margin: 0 0 8%;
+    }
+    
+    .card-grid {
+        gap: 1rem;
+    }
+    
+    .card {
+        border-radius: 16px;
+    }
+    
+    .card img {
+        height: 140px;
+    }
+    
+    .card-content {
+        padding: 0.8rem 0.8rem 1rem;
+    }
+    
+    .card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .card p {
+        font-size: 0.8rem;
+        
+        line-height: 1.5;
+    }
+    
+    .card .card-button-black,
+    .card .card-button-outline {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 30px;
+    }
+}
+
+/* ============================================= */
+/* TOUCH DEVICES - Disable hover on mobile */
+/* ============================================= */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .card:hover img {
+        transform: none;
+    }
+    
+    .card .card-button-black:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .card .card-button-black:active {
+        transform: scale(0.96);
+        background: var(--color-bg);
+    }
+}
+
+/* ============================================= */
+/* ACCESSIBILITY - Reduced Motion */
+/* ============================================= */
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .card img,
+    .card .card-button-black,
+    .card .card-button-outline {
+        transition: none;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .card:hover img {
+        transform: none;
+    }
+}
+
+/* ============================================= */
+/* DARK MODE / LIGHT MODE SUPPORT */
+/* ============================================= */
+@media (prefers-color-scheme: light) {
+    .container {
+        background-color: var(--color-light-bg, #f5f5f5);
+        background-image:
+            radial-gradient(circle,
+                rgba(0, 0, 0, 0.06) 1.2px,
+                transparent 1.2px);
+    }
+    
+    .container::before {
+        background: radial-gradient(circle at 20% 80%, 
+                    rgba(0, 0, 0, 0.03) 0%, 
+                    transparent 70%);
+    }
+    
+    .mainHeading {
+        color: var(--color-dark, #1a1a1a);
+    }
+    
+    .mainHeading::after {
+        background: linear-gradient(90deg, 
+                    var(--color-dark, #1a1a1a), 
+                    transparent);
+    }
+    
+    .card {
+        background: rgba(0, 0, 0, 0.03);
+        border-color: rgba(0, 0, 0, 0.08);
+    }
+    
+    .card:hover {
+        background: rgba(0, 0, 0, 0.06);
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.1),
+            0 0 40px rgba(0, 0, 0, 0.02);
+    }
+    
+    .card h3 {
+        color: var(--color-dark, #1a1a1a);
+    }
+    
+    .card p {
+        color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .card .card-button-black {
+        background: var(--color-light-bg, #e8e8e8);
+        color: var(--color-dark, #1a1a1a);
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .card .card-button-black:hover {
+        background: var(--color-white);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card .card-button-outline {
+        color: var(--color-dark, #1a1a1a);
+        border-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .card .card-button-outline:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* ============================================= */
+/* PRINT STYLES */
+/* ============================================= */
+@media print {
+    .container {
+        background: white !important;
+        padding: 2rem !important;
+    }
+    
+    .mainHeading {
+        color: black !important;
+    }
+    
+    .card {
+        break-inside: avoid;
+        border: 1px solid #ddd !important;
+        background: white !important;
+        box-shadow: none !important;
+    }
+    
+    .card h3 {
+        color: black !important;
+    }
+    
+    .card p {
+        color: #333 !important;
+    }
+    
+    .card .card-button-black {
+        border: 1px solid #ddd !important;
+        color: black !important;
+        background: #f5f5f5 !important;
+    }
 }

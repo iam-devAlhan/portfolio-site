@@ -8,7 +8,7 @@ function Footer() {
           <div className={styles.heading}>Feel free to contact me</div>
           <div className={styles["footer-container"]}>
             <a
-              href="https://www.linkedin.com/in/alhaan-ahmed-khan-199525296/"
+              href="https://www.linkedin.com/in/alhaan-ahmed-%F0%9F%87%B5%F0%9F%87%B8-199525296/"
               target="_blank"
             >
               <button id={styles.submitButton}>
@@ -24,7 +24,7 @@ function Footer() {
               </button>
             </a>
             <a
-              href="mailto:alhaanahmed68@outlook.com"
+              href="mailto:alhaanahmed123@gmail.com"
               target="_blank"
             >
               <button id={styles.submitButton}>
