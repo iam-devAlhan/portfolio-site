@@ -12,97 +12,164 @@ const SectionTwo = function () {
   const imgHeight = "48px";
   const imgWidth = "48px";
 
+  const experiences = [
+    {
+      role: "Python Developer",
+      company: "Nexiatech",
+      location: "Gulshan-e-Iqbal, Karachi",
+      period: "29 Sept 2025 - 8 April 2026",
+      tech: ["Python", "Django", "PHP", "Sentry"],
+      achievements: [
+        "Engineered OnPage Analytics & Monthly Backlink Report engine in Django for internal SEO management.",
+        "Implemented OffPage Task Assignment Portal with seamless notification alerts for managers and team leads.",
+        "Monitored production software for errors using Sentry for real-time logging.",
+        "Impact: Reduced reliance on manual Excel sheets by 80% with a live dashboard for leadership.",
+      ],
+    },
+  ];
+
   return (
-    <>
-      <section className={styles.sectionTwo} id="about">
-        <div className={styles.container}>
-          <div
-            style={{
-              display: "flex",
-              fontSize: "20px",
-              justifyContent: "center",
-              width: "50%",
-              flexDirection: "column",
-            }}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <h1 className={styles.heading_01}>About Myself</h1>
-            <p>I am a Python Engineer by profession involving expertise in React and Python Backend Frameworks such as Django, FastAPI. Moreover I span across my knowledge in AI Engineering, Data Engineering and ML and Cloud Deployment Platforms such as Azure.</p>
-          </div>
-          <div
-            className={styles.skills_section}
-            data-aos="fade-up"
-            data-aos-duration="1000"dark-variantdark-variantdark-variant
-          >
-            <div id={styles.skill}>
+    <section className={styles.sectionTwo} id="about">
+      <div className={styles.container}>
+        {/* Left Column: About & Skills */}
+        <div
+          className={styles.aboutContent}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <h1 className={styles.heading_01}>About Myself</h1>
+          <p>
+            I am a Full-Stack & AI Engineer specializing in building
+            production-grade web applications, data pipelines, and intelligent
+            AI tools. With a core focus on Python frameworks like Django and
+            FastAPI, I build robust, scalable backends paired with modern React
+            frontends. My work spans the intersection of software development
+            and artificial intelligence—orchestrating Large Language Models
+            (LLMs), building Retrieval-Augmented Generation (RAG) pipelines, and
+            containerizing microservices with Docker for deployment on cloud
+            environments like Azure. I focus on writing clean, maintainable code
+            and turning technical concepts into high-impact, real-world
+            solutions.
+          </p>
+
+          <div className={styles.skills_section}>
+            <div className={styles.skill}>
               <img
                 src={djangoImage}
                 width={imgWidth}
                 height={imgHeight}
                 title="Django"
+                alt="Django"
               />
             </div>
-            <div id={styles.skill}>
+            <div className={styles.skill}>
               <img
                 src={fastapiLogo}
                 width={imgWidth}
                 height={imgHeight}
                 title="FastAPI"
+                alt="FastAPI"
               />
             </div>
-            <div id={styles.skill}>
+            <div className={styles.skill}>
               <img
                 src={jsLogo}
                 width={imgWidth}
                 height={imgHeight}
-                title="Javascript"
+                title="JavaScript"
+                alt="JavaScript"
               />
             </div>
-            <div id={styles.skill}>
+            <div className={styles.skill}>
               <img
                 src={reactLogo}
                 width={imgWidth}
                 height={imgHeight}
                 title="React.js"
+                alt="React"
               />
             </div>
-            <div id={styles.skill}>
+            <div className={styles.skill}>
               <img
                 src={mongodbLogo}
                 width={imgWidth}
                 height={imgHeight}
                 title="MongoDB"
+                alt="MongoDB"
               />
             </div>
-            <div id={styles.skill}>
+            <div className={styles.skill}>
               <img
                 src={postgresSqllogo}
                 width={imgWidth}
                 height={imgHeight}
-                title="PostgresSQL"
+                title="PostgreSQL"
+                alt="PostgreSQL"
               />
             </div>
-            <div id={styles.skill}>
+            <div className={styles.skill}>
               <img
                 src={dockerLogo}
                 width={imgWidth}
                 height={imgHeight}
                 title="Docker"
+                alt="Docker"
               />
             </div>
-            <div id={styles.skill}>
+            <div className={styles.skill}>
               <img
                 src={azureLogo}
                 width={imgWidth}
                 height={imgHeight}
                 title="Azure"
+                alt="Azure"
               />
             </div>
           </div>
         </div>
-      </section>
-    </>
+
+        {/* Right Column: Experience Timeline */}
+        <div
+          className={styles.experienceSection}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          <h2 className={styles.subHeading}>Experience</h2>
+
+          <div className={styles.experienceList}>
+            {experiences.map((exp, index) => (
+              <div key={index} className={styles.experienceCard}>
+                <div className={styles.cardHeader}>
+                  <div>
+                    <h3 className={styles.roleTitle}>{exp.role}</h3>
+                    <h4 className={styles.companyName}>
+                      {exp.company}{" "}
+                      <span className={styles.location}>• {exp.location}</span>
+                    </h4>
+                  </div>
+                  <span className={styles.periodBadge}>{exp.period}</span>
+                </div>
+
+                <div className={styles.techStack}>
+                  {exp.tech.map((item, tIdx) => (
+                    <span key={tIdx} className={styles.techTag}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
+                <ul className={styles.bulletList}>
+                  {exp.achievements.map((item, aIdx) => (
+                    <li key={aIdx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

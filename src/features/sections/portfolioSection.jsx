@@ -21,10 +21,9 @@ const SectionThree = function () {
                 <img src={ewasteproject} alt="Card image" />
                 <div className={styles["card-content"]}>
                   <h3>E-Waste Management System</h3>
+                  <div style={{fontWeight: "bold", color: "#ffff", margin: "5px 0"}}>Tech Stack: HTML, CSS, JS, Django</div>
                   <p>
-                    An E-Waste Management System for adding new e-waste
-                    products, check in and check out feature, user and warehouse
-                    registration. Built using Django.
+                    An E-Waste Management System for managing e-waste items, checkin and checkout for items, revenue and sales graph, basic warehouse management.
                   </p>
                   <div className={styles["card-button-container"]}>
                     <a href="https://github.com/iam-devAlhan/E-Waste-Tracking-System" className={styles["card-button-black"]}>
@@ -38,10 +37,9 @@ const SectionThree = function () {
                 <img src={projecttwo} alt="Card image" />
                 <div className={styles["card-content"]}>
                   <h3>Paidkaro Freelancing Job Platform Application</h3>
+                  <div style={{fontWeight: "bold", color: "#ffff", margin: "5px 0"}}>Tech Stack: Reactjs, FastAPI, PostgreSQL, Firebase Auth</div>
                   <p>
-                    Freelancing Job Platform with all types of job listings, and
-                    portfolio section with Posting feature such as Gigs to sell,
-                    Built using Reactjs, Firebase, FastAPI and PostgresSQL.
+                    Freelancing Job Platform with all types of job listings, remote job listings, gigs and projects, clients', hiring managers', employers' and remote workers' platform that brings them together
                   </p>
                   <div className={styles["card-button-container"]}>
                     <a href="https://github.com/iam-devAlhan/paidkaro-webapp" className={styles["card-button-black"]}>
@@ -56,11 +54,10 @@ const SectionThree = function () {
                 <img src={sumitupproject} alt="Card image" />
                 <div className={styles["card-content"]}>
                   <h3>Sumitup - AI Meeting Assistant</h3>
+                  <div style={{fontWeight: "bold", color: "#ffff", margin: "5px 0"}}>Tech Stack: Reactjs, FastAPI, MongoDB, LangChain, Docker</div>
                   <p>
-                    Sumitup is an AI SaaS Meeting Assistant which not only
-                    summarizes meeting but simplifies the meeting process, gives
-                    clarity to users, Development in progress as Final Year
-                    Project and a Future SaaS Product as a startup.
+                    An AI Meeting Intelligence Platform which visualizes whole meeting agenda alongside meeting summaries, joins as a bot to record meetings from Zoom, Google Meet and Teams
+                    capturing action items and meeting summary. Multi-Tenant User Authentication and Chatbot Integrated that respond queries related to Meetings, Followup Generation etc
                   </p>
                   <div className={styles["card-button-container"]}>
                     <a href="https://github.com/SumitUp-AI/sumitup-ai-meet" className={styles["card-button-black"]}>
@@ -75,11 +72,9 @@ const SectionThree = function () {
                 <img  alt="Card image" />
                 <div className={styles["card-content"]}>
                   <h3>TalentX-AI Assistant</h3>
+                  <div style={{fontWeight: "bold", color: "#ffff", margin: "5px 0"}}>Tech Stack: Streamlit, Python, MongoDB Atlas Vector Search</div>
                   <p>
-                    An AI Powered Assistant which gives recommendations on Jobs,
-                    Flag inappropriate internships, detect red flags. Built
-                    using Streamlit for UI, FastAPI for API Endpoint, Vector
-                    Search for RAG using MongoDB Atlas Vector Search
+                    RAG Chatbot which uses curated knowledge base from Reddit about scam internships, career recommendations for users entering new into job market. Used MongoDB Atlas Vector Search for Vector Storage and HuggingFace for Embedding Chunks.
                   </p>
                   <div className={styles["card-button-container"]}>
                     <a href="https://github.com/iam-devAlhan/talentX-AI" className={styles["card-button-black"]}>
@@ -94,8 +89,9 @@ const SectionThree = function () {
                 <img src={etlproject} alt="Card image" />
                 <div className={styles["card-content"]}>
                   <h3>Karachi Jobs ETL Data Pipeline</h3>
+                  <div style={{fontWeight: "bold", color: "#ffff", margin: "5px 0"}}>Tech Stack: Python, SQL, Google BigQuery</div>
                   <p>
-                    A Data Pipeline with ETL process regarding analysis for Karachi Local Tech Jobs with Google BigQuery as Data Warehouse and Google Sheets for Analysis.
+                   Built a Python Script ETL Job which extracts job data, transforms for analysis and loads into BigQuery. Visual Analysis for Job Related Trends in a Tech Job Market.
                   </p>
                   <div className={styles["card-button-container"]}>
                     <a href="https://github.com/iam-devAlhan/karachi-tech-jobs-etl-pipeline" className={styles["card-button-black"]}>
@@ -110,12 +106,9 @@ const SectionThree = function () {
                 <img src={walmartsalesproject} alt="Card image" />
                 <div className={styles["card-content"]}>
                   <h3>Walmart Sales Analysis</h3>
+                  <div style={{fontWeight: "bold", color: "#ffff", margin: "5px 0"}}>Tech Stack: Python, Kaggle, Scikit-Learn, Pandas, Numpy, Streamlit</div>
                   <p>
-                    Analyzed Walmart Sales from Kaggle Dataset, Described
-                    different scenarios related to sales, affected sales due to
-                    uemployment, monthly and daily sales and visualizations.
-                    Build a Predictor for Walmart Sales affected by Unemployment
-                    Rate to demonstrate how unemployment rate affect sales.
+                    Built a Prediction Machine Learning Model that predicts sales according to unemployment rate on Walmart Sales Dataset. Acheived 96% of accuracy on Test Dataset Training with 4% mean absolute error. Deployed exported model using Streamlit for UI Interaction
                   </p>
                   <div className={styles["card-button-container"]}>
                     <a href="https://github.com/iam-devAlhan/Walmart_Sales_Trends_Prediction" className={styles["card-button-black"]}>

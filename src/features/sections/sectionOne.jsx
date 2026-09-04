@@ -21,7 +21,7 @@ const SectionOne = function () {
         >
           <h1 className={styles.heading_01}>Hi! I am Alhaan Ahmed</h1>
           <h3 className={styles.heading_02}>
-            AI Software Engineer
+            Full Stack AI Developer
           </h3>
         </div>
         <div className={styles.flexContainer2}>
